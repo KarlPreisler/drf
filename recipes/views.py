@@ -21,7 +21,7 @@ class RecipeList(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = RecipesSerializer(
+        serializer = RecipeSerializer(
             data=request.data, context={'request': request}
         )
         if serializer.is_valid():

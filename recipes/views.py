@@ -2,26 +2,26 @@ from django.http import Http404
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Post
-from .serializers import PostSerializer
+from .models import Recipe
+from .serializers import RecipeSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
 
 
-class PostList(APIView):
-    serializer_class = PostSerializer
+class RecipeList(APIView):
+    serializer_class = RecipeSerializer
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
 
     def get(self, request):
-        posts = Post.objects.all()
-        serializer = PostSerializer(
-            posts, many=True, context={'request': request}
+        recipes = Recipe.objects.all()
+        serializer = RecipeSerializer(
+            recipes, many=True, context={'request': request}
         )
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = PostSerializer(
+        serializer = RecipesSerializer(
             data=request.data, context={'request': request}
         )
         if serializer.is_valid():
@@ -34,29 +34,29 @@ class PostList(APIView):
         )
 
 
-class PostDetail(APIView):
+class RecipeDetail(APIView):
     permission_classes = [IsOwnerOrReadOnly]
-    serializer_class = PostSerializer
+    serializer_class = RecipeSerializer
 
     def get_object(self, pk):
         try:
-            post = Post.objects.get(pk=pk)
-            self.check_object_permissions(self.request, post)
-            return post
-        except Post.DoesNotExist:
+            recipe = Recipe.objects.get(pk=pk)
+            self.check_object_permissions(self.request, recipe)
+            return recipe
+        except Recipe.DoesNotExist:
             raise Http404
 
     def get(self, request, pk):
-        post = self.get_object(pk)
-        serializer = PostSerializer(
-            post, context={'request': request}
+        recipe = self.get_object(pk)
+        serializer = RecipeSerializer(
+            recipe, context={'request': request}
         )
         return Response(serializer.data)
 
     def put(self, request, pk):
-        post = self.get_object(pk)
-        serializer = PostSerializer(
-            post, data=request.data, context={'request': request}
+        recipe = self.get_object(pk)
+        serializer = RecipeSerializer(
+            recipe, data=request.data, context={'request': request}
         )
         if serializer.is_valid():
             serializer.save()
@@ -66,8 +66,8 @@ class PostDetail(APIView):
         )
 
     def delete(self, request, pk):
-        post = self.get_object(pk)
-        post.delete()
+        recipe = self.get_object(pk)
+        recipe.delete()
         return Response(
             status=status.HTTP_204_NO_CONTENT
         )

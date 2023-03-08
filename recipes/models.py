@@ -1,5 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+from enum import Enum
+
+
+class RecipeCategory(Enum):
+    BREAKFAST = 'Breakfast'
+    LUNCH = 'Lunch'
+    DINNER = 'Dinner'
+    DESSERT = 'Dessert'
+    DRINKS = 'Drinks'
 
 
 class Recipe(models.Model):
@@ -7,6 +16,7 @@ class Recipe(models.Model):
     Recipe model, related to 'owner', i.e. a User instance.
     Default image set so that we can always reference image.url.
     """
+    recipe_category_choices = [(c.value, c.name) for c in RecipeCategory]
     image_filter_choices = [
         ('_1977', '1977'), ('brannan', 'Brannan'),
         ('earlybird', 'Earlybird'), ('hudson', 'Hudson'),
@@ -31,6 +41,8 @@ class Recipe(models.Model):
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'
     )
+    category = models.CharField(
+        default='Breakfast', max_length=32, choices=recipe_category_choices)
 
     class Meta:
         ordering = ['-created_at']

@@ -31,7 +31,7 @@ class Recipe(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=200)
     desc = models.CharField(
-        max_length=200, default=('Short description'))
+        max_length=200)
     cooking_time = models.TimeField()
     ingredients = models.TextField()
     steps = models.TextField()

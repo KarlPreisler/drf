@@ -36,7 +36,9 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     steps = models.TextField()
     image = models.ImageField(
-       upload_to='images/', default='../default_post_rqlte9', blank=True
+       upload_to='images/',
+       default='https://res.cloudinary.com/dlorcehfq/image/upload/v1678551729/default_profile_y7itwz.jpg',  # noqa
+       blank=True
     )
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'

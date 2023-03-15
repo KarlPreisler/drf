@@ -32,7 +32,6 @@ class RecipeList(generics.ListCreateAPIView):
         'title',
         'desc',
         'ingredients',
-        'category',
     ]
     ordering_fields = [
         'likes_count',

@@ -1,108 +1,183 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Food Lovers API (Django REST Framework)
 
-Welcome KarlPreisler,
+This API is developed for the Food Lovers frontend social media web app and is powered by Django REST Framework. 
+The Link to the frontend resository can be found here: https://github.com/KarlPreisler/foodlovers
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Food Lovers offers a platform where users can create an account, post their own recipes or interract with other users by commenting or liking their recipes. 
+Users can also follow each other on the platform, keeping them up to date with their favorite chef's latest recipes.
 
-## Gitpod Reminders
+The website is fully responsive, providing users with the possibility of accessing the website on desktop, tablet or phone.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![Screenshot 2023-03-17 195122](https://user-images.githubusercontent.com/114813115/225993002-d2844e5b-5e32-4730-a0b2-842944de1226.png)
 
-`python3 -m http.server`
+## Index - Table of Contents
 
-A blue button should appear to click: _Make Public_,
+* [Project Goals](#project-goals)
+* [User Experience](#user-experience-(UX))
+* [Wireframes](#wireframes)
+* [Features](#features)
+* [Languages](#languages)
+* [Programs, libraries, frameworks, dependencies and media](#programs,libraries,frameworks,dependencies-and-media)
+* [Testing](#testing)
+* [Bugs](#bugs)
+* [Deployment](#deployment)
+* [Acknowledgements](#acknowledgements)
 
-Another blue button should appear to click: _Open Browser_.
+Link to deployed project: https://foodlover.herokuapp.com/
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The API for this frontend application was build with the Django REST Framework. 
 
-A blue button should appear to click: _Make Public_,
+The respository for the backend API can be found [here](https://github.com/KarlPreisler/drf)
 
-Another blue button should appear to click: _Open Browser_.
+Link to the deployed API can be found [here](https://food-lovers.herokuapp.com/)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Project Goals
 
-To log into the Heroku toolbelt CLI:
+The objective of this project was to create a website application that provides a positive user experience while allowing users to share their recipes and interract with other users. The website includes the following features:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Basic authentication and authorization functionality.
+- Intuitive navigation system for positive UX.
+- Full CRUD functionality that enables users to share their own recipes, read other users recipes, and update or delete their own recipes, comments, likes, and follow functionality.
+- Filter options that allow users to sort through recipes by the ones that they have liked and recipes posted by followed users. Filter options to search for specific titles, authors or ingredients is also available.
+- Capability to modify profile information such as bio text and images.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+## User Experience (UX)
 
-## Release History
+**User Stories**: 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+User stories are being tracked using GitHub Projects. All User Stories have been divided into Acceptance Criteria and Tasks. 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Wireframes
+When designing the layout of the website I created Wireframes for the landing page and home page:
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Features
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Navigation bar
+  - The navigation bar features a Logo the left, that acts as a link to the home page. The navigation bar has a consistent placement on each page making the website easy to navigate. The navigation bar is responsive, logo size, text and icons adapts to different screen sizes.
+The navigation bar features links to the Home, Sign in and Sign up pages. If the user is logged in however, the navigation bar will include links to the following pages: Add recipe, Home, Feed, Liked, Followed and Profile.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Languages
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- [HTML](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://www.w3schools.com/js/js_es6.asp)
+  - [JSX](https://reactjs.org/)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Programs, libraries, frameworks, dependencies and media
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- [Gitpod](https://gitpod.io)
+  - Gitpod as the main IDE.
+- [Git](https://git-scm.com/)
+  - Git for version control.
+- [GitHub](https://github.com/)
+  - GitHub to store the project.
+- [Code Institute's Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template) was used as the starting workspace template for this project.
+- [Code Institute's README Template](https://github.com/Code-Institute-Solutions/readme-template) was used to structure this README.
+- [React](https://reactjs.org/)
+  - React as a JavaScript library for building the user interface.
+- [Axios](https://axios-http.com/docs/intro)
+  - Axios to make HTTP requests and handle the responses efficiently.
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
+  - React Router for routing and navigation in this React application, allowing me to create declarative, dynamic routes with components for different pages and URLs.
+- [JWT](https://jwt.io/)
+  - JWT (JSON Web Tokens) was used for authentication and authorization of the web application.
+- [React-Bootstrap](https://react-bootstrap.github.io/)
+  - React-Bootstrap React-Bootstrap for styling and responsiveness.
+- [Heroku](https://id.heroku.com/login)
+  - Heroku to host both of the frontend and backend applications.
+- [Google Fonts](https://fonts.google.com/)
+  - Google fonts for importing Roboto font.
+- [Font Awesome](https://fontawesome.com/)
+  - Font Awesome for icons.
+- [ui.dev](https://ui.dev/amiresponsive)
+  -Ui.dev to test the responsiveness of the application.
+- [Looka](https://looka.com/) was used to create a custom logo.
+- [W3C Markup Validator](https://validator.w3.org/)
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+- An [ESLint](https://eslint.org/)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Testing
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Automatic tests for the navbar component: 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Manual testing:
+- I have tested that this website works appropriately in the following browsers: Chrome, Firefox and Safari.
+- I have made sure that all authorization and authentication functionality is working as intended.
+- I have created the website using the principles of UX and made sure that it functions the way it should on all standard devices using the devtools device toolbar.
+- I have confirmed that all components are legible in terms of positioning and readability, and work as intended.
+- No elements are distracted by background-colors, and no images are stretched when viewed on different devices.
+- I have made sure that all functionality work properly and the website works as intended.
+- I have made sure that all buttons functionality is working.
+- I have made sure that the website is responsive to all devices, using react-bootstrap and CSS to make website adapt to different screen sizes.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Lighthouse Testing 
+I tested the landing page using DevTools Lighthouse test, this is the report I received.
 
-------
+![Screenshot 2023-03-17 185951](https://user-images.githubusercontent.com/114813115/225982862-962cdc06-7fa5-4dd0-a81d-590583f16fe2.png)
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+### HTML Validator 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- I validated the HTML of the landing page through the View Source functionality, since the code is using non HTML elements that won't be visible when at the source-view. I received errors because my img elements did not have any alt attribute, after adding that I received no errors. 
 
-**How will this affect me?**
+### CSS Validator 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- The CSS was validated using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator), all code passed without warnings or errors.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Bugs
+- I ran into multiple bugs while creating this project. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Deployment
 
-**So….?**
+### Local Deployment
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+To preview the project in the development environment, run the following command in the terminal:
+```npm start```. This will open port 3000. Click *Open Browser* when the popup window appears.
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Heroku deployment
+This project is run using [Heroku](https://www.heroku.com), a cloud based platform that enables developers to build and run applications.
+Here is the [Heroku documentation](https://devcenter.heroku.com/articles/heroku-cli) for the most recent installation instructions. 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Instructions for Heroku deployment:
 
-**Anything more?**
+- Clone [this repository]().
+- Open your IDE and connect to your repository.
+- Enter this command in the terminal:
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+        npm install
 
----
+- Make sure your package.json dependencies look like this:
 
-Happy coding!
+      "dependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^11.2.7",
+        "@testing-library/user-event": "^13.5.0",
+        "axios": "^0.27.2",
+        "bootstrap": "^4.6.0",
+        "jwt-decode": "^3.1.2",
+        "react": "^17.0.2",
+        "react-bootstrap": "^1.6.3",
+        "react-dom": "^17.0.2",
+        "react-infinite-scroll-component": "^6.1.0",
+        "react-router-dom": "^5.3.0",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+      },
+
+3.  Git add, commit and push all changes to your repository.
+4.  Create or log in to an account on Heroku.
+5.  Create a new app on Heroku.
+6.  In the Deploy section on Heroku, go to Deployment method and connect to your GitHub repository.
+7.  Go down to Manual deploy and select deploy branch.
+8.  To run your app locally, you can enter this command in your terminal:
+
+            npm run dev
+
+## Acknowledgements
+- Special thanks to my mentor Spencer for guidance throughout the project. With everything from styling and layout, to the functionality and logic of the project.

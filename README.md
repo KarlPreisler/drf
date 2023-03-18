@@ -81,9 +81,11 @@ PyJWT for encode and decode JSON Web Tokens.
 - I have confirmed that the react app sends correct data to the API when creating, updating or deleting content.
 - I have confirmed that API requests from the frontend are handled as intended on the backend. Updating, deleting och creating data is transmitted approprietly between the frontend and backend.
 
-## Bugs
+### Pep8
+- PEP8 shows no errors for the project.
 
-- Broken CSS for the admin panel, it seems to be a DRF bug.
+## Bugs
+- There are no unfixed bugs.
 
 ## Deployment
 

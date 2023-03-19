@@ -5,7 +5,10 @@ The Link to the deployed API can be found here: https://food-lovers.herokuapp.co
 
 The Link to the React app resository can be found here: https://github.com/KarlPreisler/foodlovers
 
----   [INSERT ERD]   ----
+## Entity Relationship Diagram
+
+![Screenshot 2023-03-19 190338](https://user-images.githubusercontent.com/114813115/226197962-771952b8-1986-4e22-b3d6-c8a11b952b63.png)
+
 
 ## Languages used
 
